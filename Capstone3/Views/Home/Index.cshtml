@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <h3>About</h3>
+    <p>This is a tool to help compare the regional and national prices between software and web services availabe for sale.</p>
+    <p>Currently available products for comparison are those offered by @Html.ActionLink("Steam","Index","Steam") and @Html.ActionLink("Amazon Web Services (AWS)","Index","AWS") and can be accessed from the navigation bar above.</p>
+</div>
+<footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</footer>

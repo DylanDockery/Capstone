@@ -1,0 +1,55 @@
+﻿@model Capstone3.Models.App
+@{
+    ViewData["Title"] = "Steam";
+
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,
+                 initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+    <h1>@Model.Name</h1>
+    <img src="@Model.Image"/>
+    <table id="mytableID" style="width:100%"
+           class="table table-striped sampleTable">
+        <thead>
+            <tr>
+                <th>Region</th>
+                <th>Currency</th>
+                <th>Price</th>
+                <th>USD Equivalent</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Prices)
+            {
+                {
+                    <tr>
+                        <td>
+                            @Model.Region[item.Key]
+                        </td>
+                        <td>
+                            @Model.Currency[item.Key]
+                        </td>
+                        <td>
+                            @item.Value
+                        </td>
+                        <td>
+                            @(Math.Round(item.Value / Model.Rates[item.Key],2))
+                        </td>
+                    </tr>
+                }
+
+            }
+        </tbody>
+    </table>
+</body>
+

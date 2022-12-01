@@ -2,7 +2,7 @@
 
 namespace Capstone3.Models
 {
-    public class App
+    public class AppPrice
     {
         public string Name { get; set; }
         public Dictionary<string, Decimal> Prices { get; set; }
